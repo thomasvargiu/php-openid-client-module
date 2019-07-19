@@ -14,7 +14,9 @@ class AlgorithmManagerFactory
     {
         $algorithms = $container->get('config')['openid']['algorithms'] ?? [];
 
-        return new AlgorithmManager(\array_map(\Closure::fromCallable([$this, 'fetchAlgorithm']), $algorithms));
+        return new AlgorithmManager(\array_map(function (string $algorithm) use ($container) {
+            return $this->fetchAlgorithm($container, $algorithm);
+        }, $algorithms));
     }
 
     private function fetchAlgorithm(ContainerInterface $container, string $className): Algorithm
