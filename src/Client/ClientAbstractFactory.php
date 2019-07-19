@@ -79,11 +79,16 @@ class ClientAbstractFactory implements AbstractFactoryInterface
             ? $container->get(AuthMethodFactoryInterface::class)
             : new AuthMethodFactory(\array_map([$container, 'get'], $authMethods));
 
+        $httpClientName = $config['http_client'] ?? null;
+
+        $httpClient = $httpClientName ? $container->get($httpClientName) : null;
+
         return new Client(
             $this->getIssuer($container, $requestedName, $config['issuer'] ?? null),
             $this->getMetadata($container, $requestedName, $config['metadata'] ?? null),
             $jwks ? $this->getJWKSet($container, $requestedName, $jwks) : new JWKSet([]),
-            $authMethodFactory
+            $authMethodFactory,
+            $httpClient
         );
     }
 
