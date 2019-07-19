@@ -13,6 +13,7 @@ use Jose\Component\Signature\Algorithm\RS384;
 use Jose\Component\Signature\Algorithm\RS512;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use TMV\OpenIdClient\AuthMethod;
 use TMV\OpenIdClient\Authorization;
@@ -129,7 +130,7 @@ class ConfigProvider
                 Token\TokenSetFactoryInterface::class => Token\TokenSetFactory::class,
                 Token\TokenSetVerifierInterface::class => Token\TokenSetVerifier::class,
                 'openid.factory.request_factory' => RequestFactoryInterface::class,
-                'openid.factory.response_factory' => RequestFactoryInterface::class,
+                'openid.factory.response_factory' => ResponseFactoryInterface::class,
                 'openid.factory.uri_factory' => UriFactoryInterface::class,
                 'openid.service.http_client' => ClientInterface::class,
                 'openid.service.jku_factory' => JWTFramework\JKUFactory::class,
