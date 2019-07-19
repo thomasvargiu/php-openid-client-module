@@ -1,0 +1,58 @@
+{
+    "name": "thomasvargiu/php-openid-client-module",
+    "description": "php-openid-client module for ZF2 and zend-expressive",
+    "type": "library",
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "zf": {
+            "component": "TMV\\OpenIdClientModule",
+            "config-provider": "TMV\\OpenIdClientModule\\ConfigProvider"
+        }
+    },
+    "keywords": [
+        "openid",
+        "openid connect",
+        "oidc",
+        "oauth2",
+        "token",
+        "authentication",
+        "identity",
+        "zend",
+        "expressive",
+        "zf2",
+        "zend-expressive"
+    ],
+    "require": {
+        "php": "^7.2",
+        "thomasvargiu/php-openid-client": "dev-master",
+        "psr/http-client-implementation": "^1.0",
+        "psr/http-factory-implementation": "^1.0",
+        "psr/http-message-implementation": "^1.0",
+        "zendframework/zend-servicemanager": "^3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "php-http/guzzle6-adapter": "^2.0",
+        "zendframework/zend-diactoros": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "TMV\\OpenIdClientModule\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TMV\\OpenIdClientModuleTest\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Vargiu",
+            "email": "tvargiu@gmail.com"
+        }
+    ]
+}
