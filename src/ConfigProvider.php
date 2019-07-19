@@ -37,6 +37,7 @@ use TMV\OpenIdClientModule\Issuer\Metadata\MetadataFactoryFactory;
 use TMV\OpenIdClientModule\Issuer\Metadata\Provider\DiscoveryProviderFactory;
 use TMV\OpenIdClientModule\Issuer\Metadata\Provider\WebFingerProviderFactory;
 use TMV\OpenIdClientModule\Middleware\AuthRedirectHandlerFactory;
+use TMV\OpenIdClientModule\Middleware\CallbackMiddlewareFactory;
 use TMV\OpenIdClientModule\Middleware\UserInfoMiddlewareFactory;
 use TMV\OpenIdClientModule\RequestObject\RequestObjectFactoryFactory;
 use TMV\OpenIdClientModule\Service\AuthorizationServiceFactory;
@@ -174,7 +175,7 @@ class ConfigProvider
 
                 Middleware\AuthRedirectHandler::class => AuthRedirectHandlerFactory::class,
                 //Middleware\AuthRequestProviderMiddleware::class,
-                Middleware\CallbackMiddleware::class => Middleware\CallbackMiddleware::class,
+                Middleware\CallbackMiddleware::class => CallbackMiddlewareFactory::class,
                 //Middleware\ClientProviderMiddleware::class,
                 Middleware\SessionCookieMiddleware::class => InvokableFactory::class,
                 Middleware\UserInfoMiddleware::class => UserInfoMiddlewareFactory::class,
