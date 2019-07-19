@@ -20,7 +20,7 @@ class WebFingerProviderFactory
         $client = $container->get('openid.service.http_client');
 
         /** @var RequestFactoryInterface $requestFactory */
-        $requestFactory = $container->get('openid.factory.request_Factory');
+        $requestFactory = $container->get('openid.factory.request_factory');
 
         /** @var UriFactoryInterface $uriFactory */
         $uriFactory = $container->get('openid.factory.uri_factory');
